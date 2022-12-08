@@ -1,8 +1,9 @@
-var movieInputEl = document.querySelector('#movie')
-var movie = "the avengers"
-var requestUrl = "http://www.omdbapi.com/?s=" + movie + "&apikey=4b38cacc";
+var playerInputEl = document.querySelector('#player')
+var player = "the avengers"
+var requestUrl = "http://www.omdbapi.com/?s=" + player + "&apikey=4b38cacc";
 var userFormEl = document.querySelector('#user-form');
-var movieInfo = document.querySelector('.subtitle')
+var playerInfo = document.querySelector('.subtitle')
+var playerStats = document.querySelector('#Playerstats')
 /*fetch(requestUrl)
 .then(function (response) {
     return response.json();
@@ -11,73 +12,92 @@ var movieInfo = document.querySelector('.subtitle')
     console.log(data);
 })*/
 
-/*var formSubmitHandler = function (event) {
-    event.preventDefault();
-  
-    var movieInput = movieInputEl.value.trim();
-  
-    if (movieInput) {
-      getMovieInfo(movieInput);
-      
-      
-      movieInputEl.value = '';
-    } else {
-      alert('Please enter a valid movie title');
-    }
-  };
+var formSubmitHandler = function (event) {
+  event.preventDefault();
 
-var getMovieInfo = function (movie) {
-    var requestUrl = "http://www.omdbapi.com/?t=" + movie + "&apikey=4b38cacc";
-  
-    fetch(requestUrl)
-      .then(function (response) {
-        if (response.ok) {
-          console.log(response);
-          response.json().then(function (data) {
-            console.log(data);
-            displayMovie(data);
-          });
-        } else {
-          alert('Error: ' + response.statusText);
-        }
-      })
-      .catch(function (error) {
-        alert('Unable to connect to Movie server');
-      });
-  };
+  var playerInput = playerInputEl.value.trim();
 
-  var displayMovie = function (data) {
+  if (playerInput) {
+    playerStats.textContent = '';
+    getPlayerId(playerInput);
 
-    var moviePoster = document.createElement('img');
-    moviePoster.setAttribute('src', data.Poster);
-    movieInfo.appendChild(moviePoster);
 
-    var moviePlot = document.createElement('div');
-    moviePlot.textContent = data.Plot;
-    movieInfo.appendChild(moviePlot);
-
+  } else {
+    alert('Please enter a valid player name');
   }
+};
 
-  
-var getMovieQuotes = function() {
-  const options = {
+var getPlayerId = function (player) {
+  const stats = {
     method: 'GET',
     headers: {
       'X-RapidAPI-Key': 'ab81f85c68msh657a1c030dd42a6p1d14e5jsnad845cc2dca8',
       'X-RapidAPI-Host': 'free-nba.p.rapidapi.com'
     }
   };
-  
-  fetch('https://free-nba.p.rapidapi.com/stats?page=0&per_page=25', options)
+
+  fetch('https://free-nba.p.rapidapi.com/players/?search=' + player, stats)
     .then(response => response.json())
-    .then(response => console.log(response))
+    .then(function (data) {
+      var playerId = data.data[0].id;
+      getPlayerInfo(playerId);
+    })
+    .catch(err => console.error(err));
+
+};
+
+var getPlayerInfo = function (playerId) {
+  const stats = {
+    method: 'GET',
+    headers: {
+      'X-RapidAPI-Key': 'ab81f85c68msh657a1c030dd42a6p1d14e5jsnad845cc2dca8',
+      'X-RapidAPI-Host': 'free-nba.p.rapidapi.com'
+    }
+  };
+
+  fetch('https://free-nba.p.rapidapi.com/stats?per_page=100&seasons[]=2022&player_ids[]=' + playerId, stats)
+    .then(response => response.json())
+    .then(function (data) {
+      for (i = 0; i < 10; i++) {
+        var points = document.createElement('div');
+        var assists = document.createElement('div');
+        var fgpercentage = document.createElement('div');
+
+        points.textContent = 'points: ' + data.data[i].pts;
+        assists.textContent = 'assists: ' + data.data[i].ast;
+        fgpercentage.textContent = 'field goal percentage: ' + Math.floor(data.data[i].fg_pct * 100) + '%';
+        
+        playerStats.appendChild(points);
+        playerStats.appendChild(assists);
+        playerStats.appendChild(fgpercentage);
+
+        console.log(data.data[i]);
+      }
+    })
     .catch(err => console.error(err));
 }
 
 
-  userFormEl.addEventListener('submit', formSubmitHandler);userFormEl.addEventListener('submit', formSubmitHandler);*/
 
-  const options = {
+
+userFormEl.addEventListener('submit', formSubmitHandler); userFormEl.addEventListener('submit', formSubmitHandler);
+
+
+
+/*const gameOdds = {
+  method: 'GET',
+  headers: {
+    'X-RapidAPI-Key': 'ab81f85c68msh657a1c030dd42a6p1d14e5jsnad845cc2dca8',
+    'X-RapidAPI-Host': 'odds.p.rapidapi.com'
+  }
+};
+ 
+fetch('https://odds.p.rapidapi.com/v4/sports/basketball_nba/odds?regions=us&oddsFormat=decimal&markets=h2h%2Cspreads&dateFormat=iso', gameOdds)
+  .then(response => response.json())
+  .then(response => console.log(response))
+  .catch(err => console.error(err));
+
+  /*const stats = {
     method: 'GET',
     headers: {
       'X-RapidAPI-Key': 'ab81f85c68msh657a1c030dd42a6p1d14e5jsnad845cc2dca8',
@@ -85,35 +105,9 @@ var getMovieQuotes = function() {
     }
   };
   
-  fetch('https://free-nba.p.rapidapi.com/players?page=0&per_page=25', options)
+  fetch('https://free-nba.p.rapidapi.com/players?search=', stats)
     .then(response => response.json())
-    .then(response => console.log(response))
-    .catch(err => console.error(err));
-
-    const options2 = {
-      method: 'GET',
-      headers: {
-        'X-RapidAPI-Key': 'ab81f85c68msh657a1c030dd42a6p1d14e5jsnad845cc2dca8',
-        'X-RapidAPI-Host': 'odds.p.rapidapi.com'
-      }
-    };
-    
-    fetch('https://odds.p.rapidapi.com/v4/sports/basketball_nba/odds?regions=us&oddsFormat=decimal&markets=h2h%2Cspreads&dateFormat=iso', options2)
-      .then(response => response.json())
-      .then(response => console.log(response))
-      .catch(err => console.error(err));
-
-      /*var formSubmitHandler = function (event) {
-    event.preventDefault();
-  
-    var movieInput = movieInputEl.value.trim();
-  
-    if (movieInput) {
-      getMovieInfo(movieInput);
-      
-      
-      movieInputEl.value = '';
-    } else {
-      alert('Please enter a valid movie title');
-    }
-  };*/
+    .then (function(data) {
+      console.log(data);
+  })
+    .catch(err => console.error(err));*/
