@@ -101,13 +101,12 @@ var getGameOdds = function (playerTeam, name) {
       //console.log(data[0].bookmakers[0].markets[1].outcomes[0].name);
       //console.log(data[0].bookmakers[0].markets[1].outcomes[0].point);
       for (i = 0; i < data.length; i++) {
+        console.log(data);
         if (data[i].away_team.includes(playerTeam) || data[i].home_team.includes(playerTeam)) {
           var teamOdds = document.createElement('div');
           teamOdds.textContent = name + 's' + ' team odds: ' + data[i].bookmakers[0].markets[1].outcomes[0].point;
           playerStats.appendChild(teamOdds);
-        }  else {
-          getPreviousGames();
-        }
+        }  
       }
     })
     .catch(err => console.error(err));
