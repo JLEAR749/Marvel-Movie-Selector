@@ -1,6 +1,4 @@
 var playerInputEl = document.querySelector('#player')
-var player = "the avengers"
-var requestUrl = "http://www.omdbapi.com/?s=" + player + "&apikey=4b38cacc";
 var userFormEl = document.querySelector('#user-form');
 var playerInfo = document.querySelector('.subtitle')
 var playerStats = document.querySelector('#Playerstats')
@@ -131,6 +129,7 @@ var getPreviousGames = function () {
     })
     .catch(err => console.error(err));
 }
+console.log("yo");
 
 userFormEl.addEventListener('submit', formSubmitHandler);
 
