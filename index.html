@@ -10,30 +10,37 @@
   <title>Basketball Stats</title>
 </head>
 
-<header>
-  <h1>NBA Fantasy Guide</h1>
-</header>
-
 <body>
-  <main class="flex-row justify-space-between">
 
-    <div class="Title">
+  <header class="ui fluid container" style="background-color: black; margin-bottom: 20px;    padding: 50px; ">
+    <div>
+      <h1 class="ui centered header" style="color:white;">NBA Fantasy Guide</h1>
+    </div>
+  </header>
+
+  <main class="ui stackable centered grid">
+
+   <!--  <div class="column">
       <div id= title box></div>
+    </div> -->
+    
+    <div class="ui two five wide column">
+      
+      <div class="row" style="padding: 50px; background-color: white; margin-bottom: 10px;">
+        <form id="user-form" class="ui action input">
+          <input type="text" id="player" placeholder="Search Player"/>
+          <button class="ui button">Search</button>
+        </form>
+      </div>
+
+      <div class="row" style="padding: 100px; background-color: white;">
+        <div id="searchx">Recent Searches:</div>
+      </div>
+    
     </div>
 
-    <div class="SearchBar">
-      <form id="user-form" class="card-body">
-        <input name="username" id="player" />
-        <button type="submit" class="btn">Search</button>
-      </form>
-    </div>
-
-    <div class="recent-searches">
-      <div id="searchx">recent-searches:</div>
-    </div>
-
-    <div class="Data">
-      <div id="Playerstats">Playerstats:</div>
+    <div class="eight wide column" style="padding: 100px; background-color: white;">
+      <div id="Playerstats">Player Stats:</div>
     </div>
 
   </main>
