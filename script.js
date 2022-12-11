@@ -2,30 +2,74 @@ var playerInputEl = document.querySelector('#player')
 var userFormEl = document.querySelector('#user-form');
 var playerInfo = document.querySelector('.subtitle')
 var playerStats = document.querySelector('#Playerstats')
+var recentSearchesEl = document.querySelector('#recent-searches');
+var history = document.querySelector('recentPlayer')
+
 var teamOdds;
 var oddsExplanation;
-/*fetch(requestUrl)
-.then(function (response) {
-    return response.json();
-})
-.then (function(data) {
-    console.log(data);
-})*/
+
 
 var formSubmitHandler = function (event) {
   event.preventDefault();
 
   var playerInput = playerInputEl.value.trim();
 
+
+
   if (playerInput) {
+
     playerStats.textContent = '';
     getPlayerId(playerInput);
+    updateRecentSearches(playerInput);
 
 
   } else {
-    alert('Please enter a valid name')
+    $('.ui.modal')
+      .modal('show')
+      ;
   }
 };
+
+
+
+
+var updateRecentSearches = function (playerName) {
+  var recentSearches = getRecentSearches();
+  recentSearches.push(playerName);
+  saveRecentSearched(recentSearches);
+  addRecentSearchEl(playerName);
+}
+
+var setUpRecentSearchesEl = function () {
+  var recentSearches = getRecentSearches();
+  for (i = 0; i < recentSearches.length; i++) {
+    var playerName = recentSearches[i];
+    addRecentSearchEl(playerName);
+  }
+}
+
+var addRecentSearchEl = function (recentPlayer) {
+  var div = document.createElement('div');
+  div.textContent = recentPlayer;
+  recentSearchesEl.insertBefore(div, recentSearchesEl.children[0])
+}
+
+var getRecentSearches = function () {
+  var recentSearches;
+  var recentSearchesJSON = localStorage.getItem('playerInput');
+  if (!recentSearchesJSON) {
+    recentSearches = [];
+  } else {
+    recentSearches = JSON.parse(recentSearchesJSON);
+  } 
+  return recentSearches;
+}
+var saveRecentSearched = function (recentSearches) {
+  localStorage.setItem('playerInput', JSON.stringify(recentSearches));
+}
+
+
+
 
 var getPlayerId = function (player) {
   const stats = {
@@ -71,6 +115,11 @@ var getPlayerInfo = function (playerId) {
         var fgpercentage = document.createElement('div');
         var gameNumber = document.createElement('div');
 
+        gameNumber.setAttribute('style', 'margin-top: 20px;')
+        points.setAttribute('style', 'margin-top: 10px;')
+        assists.setAttribute('style', 'margin-top: 10px;')
+        fgpercentage.setAttribute('style', 'margin-top: 10px;')
+
         points.textContent = 'points: ' + data.data[i].pts;
         assists.textContent = 'assists: ' + data.data[i].ast;
         fgpercentage.textContent = 'field goal percentage: ' + Math.floor(data.data[i].fg_pct * 100) + '%';
@@ -80,7 +129,7 @@ var getPlayerInfo = function (playerId) {
         playerStats.appendChild(points);
         playerStats.appendChild(assists);
         playerStats.appendChild(fgpercentage);
-       
+
       }
       //stores players name in a variabele
       var name = data.data[0].player.first_name + ' ' + data.data[0].player.last_name;
@@ -105,18 +154,15 @@ var getGameOdds = function (playerTeam, name) {
     .then(response => response.json())
     .then(function (data) {
       console.log(data);
-      oddsExplanation = document.createElement('div');
-      oddsExplanation.textContent = 'How to read odds: The point spread - also called "the line" or "the spread" - is used as a margin to handicap the favorite team. For betting purposes, the oddsmaker predicts that the favored team will win by a certain number of points. This number of points is the point spread. The favorite is always indicated by a minus sign (e.g. -5.5) and the underdog by a plus sign (e.g.+5.5). If you bet on the favorite, you win your bet if the favorite wins AND their margin of victory is greater than the point spread. If you bet on the underdog, you win if the underdog wins, ties, or if the favored team wins but fails to exceed the point spread.'
-      playerStats.appendChild(oddsExplanation)
       for (i = 0; i < data.length; i++) {
         if (data[i].away_team.includes(playerTeam) || data[i].home_team.includes(playerTeam)) {
           teamOdds = document.createElement('div');
           teamOdds.textContent = name + ' team odds: ' + data[i].bookmakers[0].markets[1].outcomes[0].point;
           playerStats.appendChild(teamOdds);
-        } 
+          teamOdds.setAttribute('style', 'margin-top: 20px;')
+        }
       }
       if (!teamOdds) {
-        oddsExplanation.textContent = '';
         noGames(name);
       }
     })
@@ -129,7 +175,7 @@ var noGames = function (name) {
   playerStats.appendChild(teamOdds);
 }
 
-
+setUpRecentSearchesEl();
 userFormEl.addEventListener('submit', formSubmitHandler);
 
 
