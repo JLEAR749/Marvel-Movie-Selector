@@ -23,7 +23,7 @@ var formSubmitHandler = function (event) {
 
 
   } else {
-    alert('Please enter a valid player name');
+    alert('Please enter a valid name')
   }
 };
 

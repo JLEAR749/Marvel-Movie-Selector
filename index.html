@@ -5,6 +5,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jockey+One&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.css">
   <link rel="stylesheet" href="style.css">
   <title>Basketball Stats</title>
@@ -12,37 +15,48 @@
 
 <body>
 
-  <header class="ui fluid container" style="background-color: black; margin-bottom: 20px;    padding: 50px; ">
+  <header class="ui fluid container" id="header">
     <div>
-      <h1 class="ui centered header" style="color:white;">NBA Fantasy Guide</h1>
+      <h1 class="ui centered header" id="header-font">NBA Fantasy Guide</h1>
     </div>
   </header>
 
-  <main class="ui stackable centered grid">
+  <main class="ui two column stackable centered grid" id="main">
 
-   <!--  <div class="column">
-      <div id= title box></div>
-    </div> -->
-    
-    <div class="ui two five wide column">
-      
-      <div class="row" style="padding: 50px; background-color: white; margin-bottom: 10px;">
-        <form id="user-form" class="ui action input">
-          <input type="text" id="player" placeholder="Search Player"/>
-          <button class="ui button">Search</button>
+    <div class="column">
+      <div class="row" id="player-form">
+        <h2>Player Search</h2>
+        <form id="user-form" class="ui fluid action input">
+          <input type="text" id="player" placeholder="Search..."/>
+          <button class="ui primary button">Enter</button>
         </form>
+        
+       
+        
+
+        
+
+
+
+
+
+
+
+
       </div>
 
-      <div class="row" style="padding: 100px; background-color: white;">
+      <div class="row" id="recent">
         <div id="searchx">Recent Searches:</div>
+        <div class="ui divider"></div>
       </div>
-    
     </div>
 
-    <div class="eight wide column" style="padding: 100px; background-color: white;">
-      <div id="Playerstats">Player Stats:</div>
+    <div class="column" >
+      <div class="row" id="stats">
+        <div id="Playerstats">Player Stats:</div>
+        <div class="ui divider"></div>
+      </div>  
     </div>
-
   </main>
   
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script>

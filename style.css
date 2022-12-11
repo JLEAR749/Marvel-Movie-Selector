@@ -1,8 +1,49 @@
 body {
-    background-color:rgb(179, 176, 176);
+    background-color:rgb(179, 176, 176)  
 }
 
 
+#main {
+    margin: 2em;
+}
+#header {
+    margin-bottom: 1.25em;
+    background-color: black;
+    padding: 3em;
+    
+}
 
+#header-font {
+    font-family: 'Jockey One', sans-serif;
+    color: white;
+    font-size: 4.5em;
+}
 
+h2, #searchx, #Playerstats {
+    font-family: 'Jockey One', sans-serif;
+    font-size: 2em;
+    font-weight: lighter;
+}
 
+#player-form {
+    padding: 2em;
+    background-color: white;
+    margin: 1em;
+    border-radius: 1em;
+}
+
+#recent {
+    min-height: 8em;
+    background-color: white;
+    padding: 1em;
+    margin: 1em;
+    border-radius: 1rem;
+}
+
+#stats {
+    min-height: 19em;
+    background-color: white;
+    padding: 1em;
+    margin: 1em;
+    border-radius: 1em;
+}
