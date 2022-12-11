@@ -1,41 +1,35 @@
-# Movie-Selector
+# Guide 
 
-What was your motivation?
-Why did you build this project?
-What problem does it solve?
-What did you learn?
-What makes your project stand out?
-If your project has a lot of features, consider adding a "Features" section and listing them here.
-What to Include in your README
+## Description
 
-##Screenshot
+As new developers, we want to practice and showcase our new knowledge of APIs using HTML, CSS and JavaScript.
 
-##Project Description
-This is an important component of your project that many new developers often overlook.
+We want to make it easier for people to decide what movies to watch.
 
-Your description is an extremely important aspect of your project. A well-crafted description allows you to show off your work to other developers as well as potential employers.
+Information about movies are scattered across multiple websites.
 
-The quality of a README description often differentiates a good project from a bad project. A good one takes advantage of the opportunity to explain and showcase:
+We want to consolidate that information in one place, on our webpage. 
 
-What your application does,
-Why you used the technologies you used,
-Some of the challenges you faced and features you hope to implement in the future.
+## Usage
 
-##How to Install and Run the Project
-If you are working on a project that a user needs to install or run locally in a machine like a "POS", you should include the steps required to install your project and also the required dependencies if any.
+If you want to find information about a movie,
+then navigate to the URL of our webpage, **WEBSITE URL GOES HERE**
+then type the movie title into the search bar and press enter or click "search".
+Then the page will display **!@#$%& EDIT THIS LATER >>>> !@#$%^** critic reviews, a movie poster, the actors **!@#$% <<<<< EDIT THIS LATER !@#$%**
 
-Provide a step-by-step description of how to get the development environment set and running.
+## Credits
 
-## How to Use the Project
-Provide instructions and examples so users/contributors can use the project. This will make it easy for them in case they encounter a problem – they will always have a place to reference what is expected.
+**$ADD GITHUB PAGES$**
 
-You can also make use of visual aids by including materials like screenshots to show examples of the running project and also the structure and design principles used in your project.
+Chris Benjamin
+Johannah Lear
+Brad Schoffman
+Ben Ackerman
 
-Also if your project will require authentication like passwords or usernames, this is a good section to include the credentials.
+## License
 
-## Include Credits
-If you worked on the project as a team or an organization, list your collaborators/team members. You should also include links to their GitHub profiles and social media too.
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-Also, if you followed tutorials or referenced a certain material that might help the user to build that particular project, include links to those here as well.
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-This is just a way to show your appreciation and also to help others get a first hand copy of the project.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

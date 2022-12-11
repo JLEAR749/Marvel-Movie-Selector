@@ -1,6 +1,50 @@
-*{
-    background-color: 272727;
-    color:#ff652F,#ffe400, #ff652F, #14a76c;
+body {
+    background-color:rgb(179, 176, 176)  
+}
 
 
+#main {
+    margin: 2em;
+}
+#header {
+    margin-bottom: 1.25em;
+    background-color: black;
+    padding: 3em;
+    font-weight: 900;
+    
+}
+
+#header-font {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    color: white;
+    font-size: 4.5em;
+}
+
+h2, #searchx, #Playerstats {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-size: 2em;
+    font-weight: 500;
+}
+
+#player-form {
+    padding: 2em;
+    background-color: white;
+    margin: 1em;
+    border-radius: 1em;
+}
+
+#recent {
+    min-height: 8em;
+    background-color: white;
+    padding: 1em;
+    margin: 1em;
+    border-radius: 1em;
+}
+
+#stats {
+    min-height: 19em;
+    background-color: white;
+    padding: 1em;
+    margin: 1em;
+    border-radius: 1em;
 }
