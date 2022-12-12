@@ -106,7 +106,7 @@ var getPlayerInfo = function (playerId) {
       var playerName = document.createElement('div');
       playerName.textContent = 'Player stats for: ' + data.data[0].player.first_name + ' ' + data.data[0].player.last_name;
       playerStats.appendChild(playerName)
-
+      //console.log(data)
       //loops through 5 games and appends the stats to #PlayerStats <div>
       for (i = 0; i < 5; i++) {
         var number = i + 1;
@@ -157,12 +157,16 @@ var getGameOdds = function (playerTeam, name) {
       for (i = 0; i < data.length; i++) {
         if (data[i].away_team.includes(playerTeam) || data[i].home_team.includes(playerTeam)) {
           teamOdds = document.createElement('div');
-          teamOdds.textContent = name + ' team odds: ' + data[i].bookmakers[0].markets[1].outcomes[0].point;
+          team2Odds = document.createElement('div');
+          teamOdds.textContent = data[i].bookmakers[0].markets[0].outcomes[0].name + ': Odds price: ' + data[i].bookmakers[0].markets[0].outcomes[0].price;
+          team2Odds.textContent = data[i].bookmakers[0].markets[0].outcomes[1].name + ': Odds price: ' + data[i].bookmakers[0].markets[0].outcomes[1].price;
           playerStats.appendChild(teamOdds);
-          teamOdds.setAttribute('style', 'margin-top: 20px;')
+          playerStats.appendChild(team2Odds);
+          teamOdds.setAttribute('style', 'margin-top: 20px;')   
+          team2Odds.setAttribute('style', 'margin-top: 10px;')                                                              
         }
       }
-      if (!teamOdds) {
+      if (!teamOdds || !teamOdds ===  null) {
         noGames(name);
       }
     })
@@ -173,11 +177,10 @@ var noGames = function (name) {
   teamOdds = document.createElement('div');
   teamOdds.textContent = name + ' Does not have any games today';
   playerStats.appendChild(teamOdds);
+  teamOdds.setAttribute('style', 'margin-top: 10px;') 
 }
 
 setUpRecentSearchesEl();
 userFormEl.addEventListener('submit', formSubmitHandler);
-
-
 
 
