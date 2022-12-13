@@ -9,13 +9,18 @@ As new developers, we wanted to showcase and practice our skills by creating a w
 ## Key Features
 
 -Search bar
+
 -3rd party APIs give up-to-date statistics about basketball players
+
 -Persistent memory storage between browser sessions
+
 -Displays your search history to makes it easy to keep track of what players are in your roster
+
 
 ## Links
 
 Github Repo: https://github.com/JLEAR749/NBA-Fantasy-Football
+
 Live Page: https://jlear749.github.io/NBA-Fantasy-Football/
 
 ## How to use
@@ -23,22 +28,30 @@ Live Page: https://jlear749.github.io/NBA-Fantasy-Football/
 An internet browser is all you need to use this application.
 
 1) Open your preferred internet browser
+
 2) Navigate to the following webpage link: https://jlear749.github.io/NBA-Fantasy-Football/
+
 3) Then enter a basketball player's name into the search bar
+
 4) Then the page will display the points, assists, and field goal percentage from the last 5 games the player participated in, and whether or not the player has any games today
 
 ## Built With
 
 -HTML
+
 -JavaScript
+
 -CSS
+
 -Semantic UI 
+
 
 ## Future Development
 
 Things we would like to add to the application:
 
 -Display the past five games
+
 -Add a dropdown list of players to select
 
 ## How to Contribute
@@ -50,9 +63,13 @@ If you would like to contribute to this project, navigate to the repo at https:/
 This application was created by "Team Ballers"
 
 Chris Benjamin
+
 Johannah Lear
+
 Brad Schoffman
+
 Ben Ackerman
+
 
 ## License
 
