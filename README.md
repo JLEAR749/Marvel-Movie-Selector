@@ -8,7 +8,7 @@ As new developers, we wanted to showcase and practice our skills by creating a w
 
 ## Screenshot
 
-![screenshot of repo]
+![screenshot of repo]()
 
 ## Key Features
 
