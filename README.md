@@ -8,7 +8,7 @@ As new developers, we wanted to showcase and practice our skills by creating a w
 
 ## Screenshot
 
-![screenshot of repo]()
+![screenshot of repo](C:\Users\16122\Bootcamp_Projects\Marvel-Movie-Selector\Screenshot.jpg)
 
 ## Key Features
 
