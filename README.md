@@ -6,6 +6,10 @@ NBA-Fantasy-Basketball
 
 As new developers, we wanted to showcase and practice our skills by creating a website that utilizes the programming languages we've been learning. To do this, we decided to create a website for users that play in fantasy basketball leagues. It utilizes HTML, CSS, Javascript and Semantic-UI to give statistics that will help users gain a competitive edge in their fantasy leagues. 
 
+## Screenshot
+
+![screenshot of repo]
+
 ## Key Features
 
 -Search bar
