@@ -1,25 +1,53 @@
-# Guide 
+## Project Title 
 
-## Description
+NBA-Fantasy-Basketball
 
-As new developers, we want to practice and showcase our new knowledge of APIs using HTML, CSS and JavaScript.
+## About
 
-We want to make it easier for people to decide what movies to watch.
+As new developers, we wanted to showcase and practice our skills by creating a website that utilizes the programming languages we've been learning. To do this, we decided to create a website for users that play in fantasy basketball leagues. It utilizes HTML, CSS, Javascript and Semantic-UI to give statistics that will help users gain a competitive edge in their fantasy leagues. 
 
-Information about movies are scattered across multiple websites.
+## Key Features
 
-We want to consolidate that information in one place, on our webpage. 
+-Search bar
+-3rd party APIs give up-to-date statistics about basketball players
+-Persistent memory storage between browser sessions
+-Displays your search history to makes it easy to keep track of what players are in your roster
 
-## Usage
+## Links
 
-If you want to find information about a movie,
-then navigate to the URL of our webpage, **WEBSITE URL GOES HERE**
-then type the movie title into the search bar and press enter or click "search".
-Then the page will display **!@#$%& EDIT THIS LATER >>>> !@#$%^** critic reviews, a movie poster, the actors **!@#$% <<<<< EDIT THIS LATER !@#$%**
+Github Repo: https://github.com/JLEAR749/NBA-Fantasy-Football
+Live Page: https://jlear749.github.io/NBA-Fantasy-Football/
 
-## Credits
+## How to use
 
-**$ADD GITHUB PAGES$**
+An internet browser is all you need to use this application.
+
+1) Open your preferred internet browser
+2) Navigate to the following webpage link: https://jlear749.github.io/NBA-Fantasy-Football/
+3) Then enter a basketball player's name into the search bar
+4) Then the page will display the points, assists, and field goal percentage from the last 5 games the player participated in, and whether or not the player has any games today
+
+## Built With
+
+-HTML
+-JavaScript
+-CSS
+-Semantic UI 
+
+## Future Development
+
+Things we would like to add to the application:
+
+-Display the past five games
+-Add a dropdown list of players to select
+
+## How to Contribute
+
+If you would like to contribute to this project, navigate to the repo at https://github.com/JLEAR749/NBA-Fantasy-Football and request access. Then you may request to merge your changes. 
+
+## Credit
+
+This application was created by "Team Ballers"
 
 Chris Benjamin
 Johannah Lear
